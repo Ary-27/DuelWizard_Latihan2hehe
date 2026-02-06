@@ -12,6 +12,8 @@ wizardB.Attack(wizardA);
 wizardA.ShowStats();
 wizardB.ShowStats();
 
+Console.WriteLine("Permainan Selesaiiii CIHUYYYYY");
+
 public class Wizard
 {
     //Field
