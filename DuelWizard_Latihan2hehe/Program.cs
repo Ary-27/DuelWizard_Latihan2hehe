@@ -1,5 +1,7 @@
-﻿Wizard wizardA = new Wizard("Aryzz", 20);
-Wizard wizardB = new Wizard("Kokomi", 1000);
+﻿using System;
+
+Wizard wizardA = new Wizard("Aryzz", 20);
+Wizard wizardB = new Wizard("Kokomi", 30);
 
 Console.WriteLine("Permainan Dimulai...\n");
 Console.WriteLine("Statistik Awal");
@@ -8,6 +10,8 @@ wizardB.ShowStats();
 
 wizardA.Attack(wizardB);
 wizardB.Attack(wizardA);
+wizardA.Attack(wizardB);
+wizardB.Heal();
 
 wizardA.ShowStats();
 wizardB.ShowStats();
@@ -42,5 +46,26 @@ public class Wizard
         enemyObj.Energy -= Damage;
         Console.WriteLine($"{Name} menyerang {enemyObj.Name}");
         Console.WriteLine($"Sisa energy {enemyObj.Name}: {enemyObj.Energy}\n");
+    }
+
+    //Method Heal
+    public void Heal()
+    {
+        if (Energy >= 100)
+        {
+            Console.WriteLine($"Gagal melakukan heal. Energi sudah full");
+        }
+        else
+        {
+            if (Energy > 95)
+            {
+                Energy = 100;
+            }
+            else
+            {
+                Energy += 10;
+            }
+        Console.WriteLine($"{Name} melakukan heal. Energi sekarang menjadi: {Energy}");
+        }
     }
 }
