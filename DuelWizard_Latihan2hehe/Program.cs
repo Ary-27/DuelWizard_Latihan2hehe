@@ -13,6 +13,9 @@ string pilihan;
 
 while (true)
 {
+
+    Console.Clear();
+
     Console.WriteLine($"1. {wizardA.Name} menyerang {wizardB.Name}");
     Console.WriteLine($"2. {wizardB.Name} menyerang {wizardA.Name}");
     Console.WriteLine($"3. {wizardA.Name} melakukan heal");
@@ -57,6 +60,8 @@ while (true)
         }
         break;
     }
+
+    Console.ReadLine();
 }
 
 //wizardA.Attack(wizardB);
